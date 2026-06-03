@@ -115,7 +115,7 @@ git clone <repository-url>
 cd <repository-name>
 ```
 
-Install dependencies:
+Install Dependencies:
 
 ```bash
 pip install -r requirements.txt
