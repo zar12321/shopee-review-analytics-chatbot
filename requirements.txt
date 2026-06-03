@@ -17,6 +17,8 @@ faiss-cpu
 sentence-transformers
 langchain-huggingface
 transformers
+torch 
+torchvision
 
 pandas
 numpy
