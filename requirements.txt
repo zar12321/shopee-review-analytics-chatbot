@@ -5,6 +5,8 @@ typing
 unidecode 
 
 langchain
+langchain-openai
+openai
 langchain-core
 langchain-community
 langchain-google-genai
