@@ -104,7 +104,7 @@ with st.sidebar:
         options=list(model_options.keys()), 
         index=0 # default si gemini 2.5 flash yg tampil
     )
-    model_name = model_options[selected_model]
+    model = model_options[selected_model]
 
 
     if st.button(
@@ -113,7 +113,7 @@ with st.sidebar:
 
         try:
 
-            llm = load_llm(api_key, model_name)
+            llm = load_llm(api_key, model)
 
             embedding_model = (
                 load_embedding_model()

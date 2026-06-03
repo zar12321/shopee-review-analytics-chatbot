@@ -1,8 +1,8 @@
 from langchain_google_genai import GoogleGenerativeAI
 
-def load_llm(api_key, model_name):
+def load_llm(api_key, model):
     llm = GoogleGenerativeAI(
-        model_name = model_name, 
+        model = model, 
         api_key = api_key
     )
     return llm 
