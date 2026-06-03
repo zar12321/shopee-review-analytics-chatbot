@@ -235,14 +235,28 @@ if prompt:
             avatar="🛍️"
         ):
 
+            chat_history = []
+
+            for msg in st.session_state.messages:
+
+                if msg["role"] == "user":
+                    chat_history.append(
+                        HumanMessage(
+                            content=msg["content"]
+                        )
+                    )
+
+                else:
+                    chat_history.append(
+                        AIMessage(
+                            content=msg["content"]
+                        )
+                    )
+
             result = (
                 st.session_state.app.invoke(
                     {
-                        "messages":[
-                            HumanMessage(
-                                content=prompt
-                            )
-                        ]
+                        "messages": chat_history
                     }
                 )
             )
