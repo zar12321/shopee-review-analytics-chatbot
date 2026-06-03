@@ -12,7 +12,7 @@ def router_node(
     "out_of_scope"
 ]:
 
-    question = state["messages"][-3:]
+    question = state["messages"][-1].content
 
     prompt = f"""
         Anda adalah classifier.
@@ -45,8 +45,12 @@ def router_node(
         {question}
         """
 
-    response = llm.invoke(prompt)
-
+    try:
+        response = llm.invoke(prompt)
+    except Exception as e:
+        print("ROUTER ERROR =", repr(e))
+        raise
+    
     response = str(response).upper()
 
     if "REVIEW" in response:
