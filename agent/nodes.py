@@ -7,8 +7,17 @@ def retrieval_node(
     state: AgentState,
     retrieve_reviews
 ):
-
-    question = state["messages"][-1].content.lower()
+    
+    recent_message = state["messages"][-5:]
+    question = "\n".join(
+        [
+            # misal, iterasi 1 -> msg = HumanMessage("Halo")
+            # msg.__class__.__name__ adalah HumanMessafe
+            # msg.content adalah "Halo"
+            f"{msg.__class__.__name__}: {msg.content}"
+            for msg in recent_message
+        ]
+    ).lower
 
     retrieved_docs = retrieve_reviews.invoke(
         question
