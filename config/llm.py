@@ -1,10 +1,9 @@
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import GoogleGenerativeAI
 
 def load_llm(api_key):
-    llm = ChatOpenAI(
-        model="gpt-4.1-mini",
-        api_key=api_key,
-        temperature=0
+    llm = GoogleGenerativeAI(
+        model = 'gemini-2.5-flash', 
+        api_key = api_key
     )
 
-    return llm
+    return llm 
