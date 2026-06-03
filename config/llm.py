@@ -1,9 +1,8 @@
 from langchain_google_genai import GoogleGenerativeAI
 
-def load_llm(api_key):
+def load_llm(api_key, model_name):
     llm = GoogleGenerativeAI(
-        model = 'gemini-2.0-flash-lite', 
+        model_name = model_name, 
         api_key = api_key
     )
-
     return llm 
