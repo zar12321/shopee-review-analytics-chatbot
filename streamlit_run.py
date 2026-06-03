@@ -86,7 +86,7 @@ with st.sidebar:
     )
 
     api_key = st.text_input(
-        "OpenAI API Key",
+        "Gemini API Key",
         type="password"
     )
 
