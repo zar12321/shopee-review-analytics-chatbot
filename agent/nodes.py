@@ -86,8 +86,14 @@ def reasoning_node(
     state: AgentState,
     llm
 ):
-
-    question = state["messages"][-1].content
+    
+    recent_message = state["messages"][-5:]
+    question = "\n".join(
+        [
+            f"{msg.__class__.__name__}:{msg.content}"
+            for msg in recent_message
+        ]
+    ).lower()
 
     docs = state.get(
         "retrieved_docs",
@@ -107,7 +113,7 @@ def reasoning_node(
     prompt = f"""
         Anda adalah analis review Shopee.
 
-        Pertanyaan:
+        Riwayat Percakapan:
         {question}
 
         Review yang ditemukan:
