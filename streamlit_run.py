@@ -113,7 +113,7 @@ with st.sidebar:
 
         try:
 
-            llm = load_llm(api_key)
+            llm = load_llm(api_key, model_name)
 
             embedding_model = (
                 load_embedding_model()
