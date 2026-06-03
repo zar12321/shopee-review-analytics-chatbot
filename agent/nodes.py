@@ -17,7 +17,7 @@ def retrieval_node(
             f"{msg.__class__.__name__}: {msg.content}"
             for msg in recent_message
         ]
-    ).lower
+    ).lower()
 
     retrieved_docs = retrieve_reviews.invoke(
         question
