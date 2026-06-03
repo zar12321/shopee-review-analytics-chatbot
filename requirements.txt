@@ -4,8 +4,6 @@ typing
 
 unidecode 
 
-re
-
 langchain
 langchain-core
 langchain-community
