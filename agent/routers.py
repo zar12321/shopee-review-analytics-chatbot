@@ -12,15 +12,8 @@ def router_node(
     "out_of_scope"
 ]:
 
-    recent_messages = state["messages"][-5:]
+    question = state["messages"][-3:]
 
-    question = "\n".join(
-        [
-            f"{msg.__class__.__name__}: {msg.content}"
-            for msg in recent_messages
-        ]
-    )
-    
     prompt = f"""
         Anda adalah classifier.
 
