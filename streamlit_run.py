@@ -90,6 +90,23 @@ with st.sidebar:
         type="password"
     )
 
+    model_options = {
+        "Gemini 2.5 Flash": "gemini-2.5-flash",
+        "Gemini 2.5 Flash Lite": "gemini-2.5-flash-lite",
+        "Gemini 2.5 Pro": "gemini-2.5-pro",
+        "Gemini 2.0 Flash": "gemini-2.0-flash",
+        "Gemini 2.0 Flash Lite": "gemini-2.0-flash-lite",
+        "Gemini 1.5 Pro": "gemini-1.5-pro",
+        "Gemini 1.5 Flash": "gemini-1.5-flash"
+    }
+    selected_model = st.selectbox(
+        'Gemini Model', 
+        options=list(model_options.keys()), 
+        index=0 # default si gemini 2.5 flash yg tampil
+    )
+    model_name = model_options[selected_model]
+
+
     if st.button(
         "Connect"
     ):
