@@ -20,6 +20,7 @@ def router_node(
             for msg in recent_messages
         ]
     )
+    
     prompt = f"""
         Anda adalah classifier.
 
