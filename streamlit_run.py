@@ -112,7 +112,7 @@ with st.sidebar:
     ):
 
         try:
-
+            # revisi llm nya ini nambahin model 
             llm = load_llm(api_key, model)
 
             embedding_model = (
