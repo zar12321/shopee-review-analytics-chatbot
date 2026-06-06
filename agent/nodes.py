@@ -111,7 +111,7 @@ def reasoning_node(
     )
 
     prompt = f"""
-        Anda adalah analis review Shopee.
+        Anda adalah analis review Shopee yang mengambil sumber review dari Google Play Store.
 
         Riwayat Percakapan:
         {question}
